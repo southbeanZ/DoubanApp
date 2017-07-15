@@ -6,11 +6,11 @@
 <script>
 export default {
   props: ['value'],
-  // computed: {
-  //   value() {
-  //     return this.$route.matched[0].name
-  //   }
-  // }
+  computed: {
+    value() {
+      return this.$route.matched[0].name;
+    }
+  }
 }
 </script>
 <style lang="scss">

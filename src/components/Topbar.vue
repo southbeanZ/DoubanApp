@@ -1,20 +1,32 @@
 <template>
   <div class="m-header" :class="{'is-bg': isBg}">
-    <a href="javascript:;" class="u-header-icon left">
+    <div class="m-header-btn left">
+      <a href="javascript:;" class="u-btn" v-show="isLeftShow">
+        <img src="../assets/images/ic_bar_back_white.png" class="icon">
+      </a>
       <slot name="left"></slot>
-      <!-- <img src="../assets/images/ic_bar_back_white.png" class="icon">
-      <span>返回</span> -->
-    </a>
-    <span class="u-header-title">豆瓣</span>
-    <a href="javascript:;" class="u-header-icon right">
+    </div>
+    <span class="u-header-title">{{title}}</span>
+    <div class="m-header-btn right">
       <slot name="right"></slot>
-    </a>
+    </div>
   </div>
 </template>
 <script type="text/javascript">
 export default {
   props: {
-    isBg: true
+    isBg: {
+      type: Boolean,
+      default: false
+    },
+    isLeftShow: {
+      type: Boolean,
+      default: false
+    },
+    title: {
+      type: String,
+      default: ''
+    }
   }
 }
 </script>
@@ -38,19 +50,24 @@ export default {
     white-space: nowrap;
     overflow: hidden;
   }
-  .u-header-icon {
+  .m-header-btn {
     display: block;
     height: 100%;
     font-size: 14px;
     line-height: 44px;
     color: $headerDefaultColor;
 
-    .icon {
-      width: 28px;
-      height: 28px;
-      vertical-align: middle;
+    .u-btn {
+      display: inline-block;
+      width: 36px;
+      height: 100%;
+      .icon {
+        width: 28px;
+        height: 28px;
+        vertical-align: middle;
+      }
     }
-
+    
     &.left {
       position: absolute;
       left: 10px;

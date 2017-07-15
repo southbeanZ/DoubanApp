@@ -1,25 +1,20 @@
 <template>
   <div class="main">
+    <Topbar title="我的">
+	    <a href="javascript:;" class="u-btn" slot="right">
+        <img src="../../assets/images/ic_settings.png" class="icon">
+      </a>
+    </Topbar>
     个人
   </div>
 </template>
 
 <script>
-// import Tabbar from '../components/Tabbar'
-// import TabbarItem from '../components/TabbarItem'
-// import Header from '../components/Header'
+import Topbar from '@/components/Topbar'
 
-// export default {
-//   name: 'index',
-//   data() {
-//     return {
-//       active: 'tab_1'
-//     }
-//   },
-//   components: {
-//     Tabbar,
-//     TabbarItem,
-//     Header
-//   }
-// }
+export default {
+  components: {
+    Topbar
+  }
+}
 </script>

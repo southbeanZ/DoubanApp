@@ -12,31 +12,31 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Index',
+      name: 'index',
       component: Index
     },
     {
       path: '/audiobook',
-      name: 'AudioBook',
+      name: 'audiobook',
       component: AudioBook
     },
     {
       path: '/broadcast',
-      name: 'Broadcast',
+      name: 'broadcast',
       component: Broadcast
     },
     {
       path: '/group',
-      name: 'Group',
+      name: 'group',
       component: Group
     },
     {
       path: '/mine',
-      name: 'Mine',
+      name: 'mine',
       component: Mine
     },
     {
-      path: '/Index',
+      path: '/index',
       redirect: '/'
     },
     {

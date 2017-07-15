@@ -1,10 +1,5 @@
 <template>
   <div class="main">
-    <Topbar isBg="true">
-      <img src="./assets/images/ic_bar_back_white.png" class="icon" slot="left">
-      <span slot="left">返回</span>
-      <span slot="right">分享</span>
-    </Topbar>
     <router-view></router-view>
     <Tabbar v-model="active">
       <TabbarItem id="index" isRouter>
@@ -39,7 +34,6 @@
 <script>
 import Tabbar from './components/Tabbar'
 import TabbarItem from './components/TabbarItem'
-import Topbar from './components/Topbar'
 
 export default {
   name: 'index',
@@ -50,8 +44,7 @@ export default {
   },
   components: {
     Tabbar,
-    TabbarItem,
-    Topbar
+    TabbarItem
   }
 }
 </script>
