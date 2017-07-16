@@ -5,7 +5,7 @@
 </template>
 <script>
 export default {
-  props: ['value'],
+  // props: ['value'],
   computed: {
     value() {
       return this.$route.matched[0].name;
@@ -23,5 +23,6 @@ export default {
   border-top: 1px solid $borderColor;
   text-align: center;
   font-size: 0;
+  background-color: #fff;
 }
 </style>

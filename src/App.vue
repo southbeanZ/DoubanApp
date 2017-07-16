@@ -1,7 +1,7 @@
 <template>
-  <div class="main">
+  <div class="g-main">
     <router-view></router-view>
-    <Tabbar v-model="active">
+    <Tabbar>
       <TabbarItem id="index" isRouter>
         <img src="./assets/images/ic_tab_home_normal.png" slot="icon-normal">
         <img src="./assets/images/ic_tab_home_active.png" slot="icon-active">
@@ -30,7 +30,14 @@
     </Tabbar>
   </div>
 </template>
-
+<style>
+.g-main {
+  overflow: hidden;
+}
+.g-con {
+  margin-top: 44px;
+}
+</style>
 <script>
 import Tabbar from './components/Tabbar'
 import TabbarItem from './components/TabbarItem'
@@ -39,7 +46,7 @@ export default {
   name: 'index',
   data() {
     return {
-      active: 'index'
+      // active: 'index'
     }
   },
   components: {

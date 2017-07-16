@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="g-con">
     <Topbar title="广播">
       <a href="javascript:;" class="u-btn" slot="right">
         <img src="../../assets/images/ic_settings.png" class="icon">
