@@ -3,16 +3,6 @@
     <slot></slot>
   </div>
 </template>
-<script>
-export default {
-  // props: ['value'],
-  computed: {
-    value() {
-      return this.$route.matched[0].name;
-    }
-  }
-}
-</script>
 <style lang="scss">
 @import '../assets/scss/var.scss';
 .m-tabbar {
@@ -24,5 +14,16 @@ export default {
   text-align: center;
   font-size: 0;
   background-color: #fff;
+  z-index: 99;
 }
 </style>
+<script>
+export default {
+  // props: ['value'],
+  computed: {
+    value() {
+      return this.$route.matched[0].name;
+    }
+  }
+}
+</script>

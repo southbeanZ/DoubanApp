@@ -12,24 +12,6 @@
     </div>
   </div>
 </template>
-<script type="text/javascript">
-export default {
-  props: {
-    isBg: {
-      type: Boolean,
-      default: false
-    },
-    isLeftShow: {
-      type: Boolean,
-      default: false
-    },
-    title: {
-      type: String,
-      default: ''
-    }
-  }
-}
-</script>
 <style lang="scss">
 @import '../assets/scss/var.scss';
 .m-header {
@@ -42,6 +24,7 @@ export default {
   background-color: #fff;
   border-bottom:1px solid $borderColor;
   text-align: center;
+  z-index: 99;
 
   .u-header-title {
     font-size: 16px;
@@ -94,3 +77,21 @@ export default {
   }
 }
 </style>
+<script type="text/javascript">
+export default {
+  props: {
+    isBg: {
+      type: Boolean,
+      default: false
+    },
+    isLeftShow: {
+      type: Boolean,
+      default: false
+    },
+    title: {
+      type: String,
+      default: ''
+    }
+  }
+}
+</script>

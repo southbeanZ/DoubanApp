@@ -11,32 +11,6 @@
     </p>
   </a>
 </template>
-<script>
-export default {
-  props: {
-    id: {
-      type: String
-    },
-    isRouter: {
-      type: Boolean,
-      default: false
-    }
-  },
-  computed: {
-    isActive() {
-      return this.id === this.$parent.value;
-    }
-  },
-  methods: {
-    switchTab() {
-      this.$parent.$emit('input', this.id);
-      if(this.isRouter){
-          this.$router.push(this.id);
-      }
-    }
-  }
-}
-</script>
 <style lang="scss">
 @import '../assets/scss/var.scss';
 .m-tabbar-item {
@@ -65,3 +39,29 @@ export default {
   }
 }
 </style>
+<script>
+export default {
+  props: {
+    id: {
+      type: String
+    },
+    isRouter: {
+      type: Boolean,
+      default: false
+    }
+  },
+  computed: {
+    isActive() {
+      return this.id === this.$parent.value;
+    }
+  },
+  methods: {
+    switchTab() {
+      this.$parent.$emit('input', this.id);
+      if(this.isRouter){
+          this.$router.push(this.id);
+      }
+    }
+  }
+}
+</script>
