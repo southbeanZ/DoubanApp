@@ -15,10 +15,10 @@
       <div class="swiper-slide slide2" slot="swiper-con">Slide 2</div>
       <div class="swiper-slide slide3" slot="swiper-con">Slide 3</div>
 		</Swipe>
-    <p>szzzzzzzzzzzzzzzzz</p>
-    <p>szzzzzzzzzzzzzzzzz</p>
-    <p>szzzzzzzzzzzzzzzzz</p>
-    <p>szzzzzzzzzzzzzzzzz</p>
+    <MediaCell author="作者：大象公会" column="来自栏目：广播精选" pic="https://qnmob2.doubanio.com/img/files/file-1489047494.jpg">
+    	<p class="title" slot="title">个人意见：为什么中国没有鲍勃·迪伦这样的民谣歌手</p>
+			<p class="desc" slot="desc">我们这一代人的成长年代，真正的诗歌课从来都是缺席的。</p>
+    </MediaCell>
     <p>szzzzzzzzzzzzzzzzz</p>
     <p>szzzzzzzzzzzzzzzzz</p>
     <p>szzzzzzzzzzzzzzzzz</p>
@@ -50,11 +50,13 @@
 <script>
 import Topbar from '@/components/Topbar';
 import Swipe from '@/components/Swipe';
+import MediaCell from '@/components/MediaCell';
 
 export default {
   components: {
     Topbar,
-    Swipe
+    Swipe,
+    MediaCell
   }
 }
 </script>
