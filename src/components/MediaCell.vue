@@ -59,7 +59,7 @@
 	}
 	.u-media-info {
 		position: relative;
-		padding: 5px 0 10px;
+		padding: 5px 0;
 		font-size: 12px;
 		color: #bfbfbf;
 		&:before {
