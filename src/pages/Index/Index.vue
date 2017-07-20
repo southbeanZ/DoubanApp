@@ -21,7 +21,7 @@
       <div class="swiper-slide slide2" slot="swiper-con">Slide 2</div>
       <div class="swiper-slide slide3" slot="swiper-con">Slide 3</div>
 		</Swipe>-->
-    <MediaCell :author="item.target.author.name" :column="item.source_cn" :pic="item.target.cover_url" v-for="item of recommendData" :key="item.id">
+    <MediaCell :url="item.target.url" :author="item.target.author.name" :column="item.source_cn" :pic="item.target.cover_url" v-for="item of recommendData" :key="item.id">
     	<p class="title" slot="title">{{item.title}}</p>
 			<p class="desc" slot="desc">{{item.target.desc}}</p>
     </MediaCell>

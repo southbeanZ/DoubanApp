@@ -35,7 +35,7 @@
   overflow: hidden;
 }
 .g-con {
-  margin: 44px 4px 48px;
+  margin: 44px 0px 48px;
 }
 </style>
 <script>

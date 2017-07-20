@@ -1,5 +1,5 @@
 <template>
-	<div class="m-mediacell">
+	<a class="m-mediacell" :href="url">
 		<div class="m-media-con">
 			<div class="u-con">
 				<slot name="title"></slot>
@@ -11,7 +11,7 @@
 			<span class="author">{{author}}</span>
 			<span class="column">{{column}}</span>
 		</div>
-	</div>
+	</a>
 </template>
 <style lang="scss">
 .m-mediacell {
@@ -83,6 +83,10 @@
 <script>
 export default {
 	props: {
+		url: {
+			type: String,
+			default: ""
+		},
 		pic: {
 			type: String,
 			default: ""

@@ -9,9 +9,15 @@
 </template>
 <style>
 @import '../assets/libs/swiper/css/swiper.css';
-/* .swiper-pagination-bullet-active {
+.swiper-pagination {
+	text-align: right;
+}
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet:last-child {
+	margin-right: 15px;
+}
+.swiper-pagination-bullet-active {
   background: #fff;
-} */
+}
 </style>
 <script>
 import '../assets/libs/swiper/js/swiper.js';
