@@ -21,6 +21,14 @@
       <div class="swiper-slide slide2" slot="swiper-con">Slide 2</div>
       <div class="swiper-slide slide3" slot="swiper-con">Slide 3</div>
 		</Swipe>-->
+    <Cell txt="热门" label="hot">
+    </Cell>
+    <MediaCell :url="item.target.uri" :author="item.target.author.name" :column="item.source_cn" :pic="item.target.cover_url" v-for="item of normalData" :key="item.id">
+      <p class="title" slot="title">{{item.title}}</p>
+      <p class="desc" slot="desc">{{item.target.desc}}</p>
+    </MediaCell>
+    <Cell txt="为你推荐" label="recommend">
+    </Cell>
     <MediaCell :url="item.target.url" :author="item.target.author.name" :column="item.source_cn" :pic="item.target.cover_url" v-for="item of recommendData" :key="item.id">
     	<p class="title" slot="title">{{item.title}}</p>
 			<p class="desc" slot="desc">{{item.target.desc}}</p>
@@ -56,17 +64,20 @@
 import Topbar from '@/components/Topbar';
 import Swipe from '@/components/Swipe';
 import MediaCell from '@/components/MediaCell';
+import Cell from '@/components/Cell';
 
 export default {
   data() {
     return {
-      recommendData: []
+      recommendData: [],
+      normalData: []
     } 
   },
   components: {
     Topbar,
     Swipe,
-    MediaCell
+    MediaCell,
+    Cell
   },
   mounted() {
     this.fetchData();
@@ -75,7 +86,14 @@ export default {
     fetchData() {
       var self = this;
       this.axios.get('/api/homeData').then((response) => {
-        self.recommendData = response.data.data.recommend_feeds;
+        let feeds = response.data.data.recommend_feeds;
+        feeds.forEach((_el) => {
+          if(_el.card) {
+            self.recommendData.push(_el);
+          } else {
+            self.normalData.push(_el);
+          }
+        });
       });
     }
   }

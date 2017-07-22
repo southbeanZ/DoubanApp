@@ -34,6 +34,9 @@
 			width: 4px;
 			background: #ff8447;
 		}
+		&:after {
+			height: 0;
+		}
 	}
 	&.recommend {
 		&:before {
@@ -44,6 +47,9 @@
 			height: 100%;
 			width: 4px;
 			background: #42bd56;
+		}
+		&:after {
+			height: 0;
 		}
 	}
 	.u-cell-left {
