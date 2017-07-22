@@ -16,6 +16,7 @@
 <style lang="scss">
 .m-mediacell {
 	position: relative;
+	display: block;
 	padding: 10px;
 	&:after {
 		content: '';

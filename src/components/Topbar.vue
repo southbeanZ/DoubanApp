@@ -6,7 +6,13 @@
       </a>
       <slot name="left"></slot>
     </div>
-    <span class="u-header-title">{{title}}</span>
+    <span class="u-header-title" v-if="title">{{title}}</span>
+    <div class="m-header-search" slot="left" v-else="">
+      <div class="u-search">
+        <img src="../assets/images/ic_search.png" class="icon">
+        <input type="text" class="input" placeholder="影视 图书 唱片 小组等">
+      </div>
+    </div>
     <div class="m-header-btn right">
       <slot name="right"></slot>
     </div>
@@ -26,6 +32,44 @@
   text-align: center;
   z-index: 99;
 
+  .icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+  }
+  .m-header-search {
+    display: block;
+    height: 32px;
+    margin: 6px 56px 6px 10px;
+    .u-search {
+      display: block;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      padding-left: 40px;
+      padding-right: 10px;
+      border-radius: 4px;
+      background: #fff;
+      font-size: 0;
+      text-align: left;
+      .icon {
+        margin-left: -30px;
+        margin-top: 6px;
+      }
+      .input {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        vertical-align: middle;
+        float: right;
+        font-size: 12px;
+        &::placeholder {
+          color: #aaa;
+        }
+      }
+    }
+  }
   .u-header-title {
     font-size: 16px;
     line-height: 44px;
@@ -44,11 +88,7 @@
       display: inline-block;
       width: 36px;
       height: 100%;
-      .icon {
-        width: 28px;
-        height: 28px;
-        vertical-align: middle;
-      }
+      
     }
     
     &.left {

@@ -1,8 +1,8 @@
 <template>
   <div class="g-con">
-    <Topbar isBg title="首页">
+    <Topbar isBg>
 	    <a href="javascript:;" class="u-btn" slot="right">
-        <img src="../../assets/images/ic_action_share.png" class="icon">
+        <img src="../../assets/images/ic_chat_white.png" class="icon">
       </a>
     </Topbar>
 		<Swipe swipeid="swipe1" :autoplay="3000" class="m-swipe">
