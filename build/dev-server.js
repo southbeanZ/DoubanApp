@@ -22,11 +22,18 @@ var proxyTable = config.dev.proxyTable
 
 var app = express()
 var homeData = require('../src/data/homeData.json')
+var bookData = require('../src/data/bookData.json')
 var apiRoutes = express.Router();
 apiRoutes.get('/homeData', function(req, res) {
   res.json({
     errno: 0,
     data: homeData
+  })
+});
+apiRoutes.get('/bookData', function(req, res) {
+  res.json({
+    errno: 0,
+    data: bookData
   })
 })
 app.use('/api', apiRoutes)

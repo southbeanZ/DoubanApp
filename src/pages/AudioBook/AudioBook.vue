@@ -8,22 +8,53 @@
       	<img src="../../assets/images/ic_actionbar_search_icon.png" class="icon">
       </a>
     </Topbar>
-    <Book pic="https://img3.doubanio.com/lpic/s23128183.jpg" name="杀死一只知更鸟" :score="8.0"></Book>
-    <Book pic="https://img3.doubanio.com/lpic/s23128183.jpg" name="22" :score="3.4"></Book>
-    <Book pic="https://img3.doubanio.com/lpic/s23128183.jpg" name="11" :score="1.6"></Book>
-    <Book pic="https://img3.doubanio.com/lpic/s23128183.jpg" name="112" :score="7.3"></Book>
-    <Book pic="https://img3.doubanio.com/lpic/s23128183.jpg" name="杀死一只知更鸟" :score="9.9"></Book>
+    <Swipe class="m-swipe" swipeid="swipe1" :loop="false" :pagination="false" :slidesPerView="3.5">
+      <div class="swiper-slide u-slide" slot="swiper-con" v-for="item in bookData" :key="item.id">
+        <Book :pic="item.cover.url" :name="item.title" :score="item.rating.value"></Book>
+      </div>
+    </Swipe>
   </div>
 </template>
-
+<style lang="scss">
+.m-swipe {
+  .u-slide {
+    display: inline-block;
+    margin: 10px 20px;
+  }
+}
+</style>
 <script>
 import Topbar from '@/components/Topbar'
 import Book from '@/components/Book'
+import Swipe from '@/components/Swipe'
 
 export default {
+  data() {
+    return {
+      bookData: []
+    }
+  },
   components: {
     Topbar,
+    Swipe,
     Book
+  },
+  created() {
+    this.fetchData();
+  },
+  mounted() {
+    
+  },
+  methods: {
+    fetchData() {
+      var self = this;
+      this.axios.get('/api/bookData').then((response) => {
+        let items = response.data.data.subject_collection_items;
+        items.forEach((_el) => {
+          self.bookData.push(_el);
+        });
+      });
+    }
   }
 }
 </script>

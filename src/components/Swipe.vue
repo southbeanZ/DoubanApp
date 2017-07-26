@@ -50,6 +50,10 @@ export default {
 		paginationType: {
 			type: String,
 			default: 'bullets'
+		},
+		slidesPerView: {
+			type: Number,
+			default: 1
 		}
 	},
 	mounted() {
@@ -59,6 +63,8 @@ export default {
 	    loop: self.loop,
 	    autoplay: self.autoplay,
 	    effect: self.effect,
+
+	    slidesPerView: self.slidesPerView,
 	    
 	    // 如果需要分页器
 	    pagination: '.swiper-pagination',
