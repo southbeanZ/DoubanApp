@@ -8,7 +8,7 @@
       	<img src="../../assets/images/ic_actionbar_search_icon.png" class="icon">
       </a>
     </Topbar>
-    <Swipe class="m-swipe" swipeid="swipe1" :loop="false" :pagination="false" :slidesPerView="3.5">
+    <Swipe class="m-swipe" swipeid="swipe1" :loop="false" :pagination="false" :slidesPerView="3.5" :slideData="bookData" ref="swipe">
       <div class="swiper-slide u-slide" slot="swiper-con" v-for="item in bookData" :key="item.id">
         <Book :pic="item.cover.url" :name="item.title" :score="item.rating.value"></Book>
       </div>
@@ -19,7 +19,7 @@
 .m-swipe {
   .u-slide {
     display: inline-block;
-    margin: 10px 20px;
+    margin: 10px 5px;
   }
 }
 </style>
@@ -43,7 +43,10 @@ export default {
     this.fetchData();
   },
   mounted() {
-    
+    let self = this;
+    setTimeout(function() {
+      self.$refs.swipe.initSwipe();
+    }, 0);
   },
   methods: {
     fetchData() {

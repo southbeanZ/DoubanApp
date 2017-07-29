@@ -1,7 +1,7 @@
 # DoubanApp
 Douban App based on Vue.
 
-Vue + Sass + Webpack
+Vue + Sass + Webpack + axios
 
 运行方法：
 1. `git clone` 工程到本地

@@ -54,22 +54,35 @@ export default {
 		slidesPerView: {
 			type: Number,
 			default: 1
+		},
+		slideData: {
+			type: Array,
+			default: null
+		}
+	},
+	methods: {
+		initSwipe() {
+			var self = this;
+			console.log('init'+this.slideData)
+			var mySwiper = new Swiper('.'+ self.swipeid, {
+		    direction: self.direction,
+		    loop: self.loop,
+		    autoplay: self.autoplay,
+		    effect: self.effect,
+
+		    slidesPerView: self.slidesPerView,
+		    
+		    // 如果需要分页器
+		    pagination: '.swiper-pagination',
+		    paginationType: self.paginationType,
+		  });
 		}
 	},
 	mounted() {
 		var self = this;
-		var mySwiper = new Swiper('.'+ self.swipeid, {
-	    direction: self.direction,
-	    loop: self.loop,
-	    autoplay: self.autoplay,
-	    effect: self.effect,
-
-	    slidesPerView: self.slidesPerView,
-	    
-	    // 如果需要分页器
-	    pagination: '.swiper-pagination',
-	    paginationType: self.paginationType,
-	  })
+		if(self.slideData == null) {
+			self.initSwipe();
+		}
 	}
 }
 </script>
