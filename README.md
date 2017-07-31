@@ -1,6 +1,8 @@
 # DoubanApp
 Douban App based on Vue.
 
+实现豆瓣APP首页图片轮播、推荐文章，底部Tab、顶部标题，书籍、推荐书籍等组件。
+
 Vue + Sass + Webpack + axios
 
 运行方法：
