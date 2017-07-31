@@ -34,6 +34,9 @@
 		font-size: 14px;
 		line-height: 20px;
 		color: #494949;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
 	}
 	.m-score {
 		width: 100%;

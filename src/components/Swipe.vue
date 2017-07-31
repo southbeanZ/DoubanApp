@@ -58,6 +58,10 @@ export default {
 		slideData: {
 			type: Array,
 			default: null
+		},
+		spaceBetween: {
+			type: Number,
+			default: 0
 		}
 	},
 	methods: {
@@ -69,6 +73,7 @@ export default {
 		    loop: self.loop,
 		    autoplay: self.autoplay,
 		    effect: self.effect,
+		    spaceBetween: self.spaceBetween,
 
 		    slidesPerView: self.slidesPerView,
 		    

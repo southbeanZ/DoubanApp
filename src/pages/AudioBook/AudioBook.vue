@@ -8,7 +8,12 @@
       	<img src="../../assets/images/ic_actionbar_search_icon.png" class="icon">
       </a>
     </Topbar>
-    <Swipe class="m-swipe" swipeid="swipe1" :loop="false" :pagination="false" :slidesPerView="3.5" :slideData="bookData" ref="swipe">
+    <Cell txt="新书速递">
+      <a href="javascript:;" class="u-btn" slot="right">
+        <img src="../../assets/images/ic_arrow_gray_small.png" alt="" class="icon">
+      </a>
+    </Cell>
+    <Swipe class="m-swipe" swipeid="swipe1" :loop="false" :pagination="false" :spaceBetween="20" :slidesPerView="3.5" :slideData="bookData" ref="swipe">
       <div class="swiper-slide u-slide" slot="swiper-con" v-for="item in bookData" :key="item.id">
         <Book :pic="item.cover.url" :name="item.title" :score="item.rating.value"></Book>
       </div>
@@ -18,8 +23,6 @@
 <style lang="scss">
 .m-swipe {
   .u-slide {
-    display: inline-block;
-    margin: 10px 5px;
   }
 }
 </style>
@@ -27,6 +30,7 @@
 import Topbar from '@/components/Topbar'
 import Book from '@/components/Book'
 import Swipe from '@/components/Swipe'
+import Cell from '@/components/Cell'
 
 export default {
   data() {
@@ -37,6 +41,7 @@ export default {
   components: {
     Topbar,
     Swipe,
+    Cell,
     Book
   },
   created() {
